@@ -89,8 +89,8 @@ Abram dois livros pelo catálogo, comparem os dados e testem o retorno. Confiram
 3. Some os valores e atualize `.total` com `formatarPreco(total)`. Se vazio, mostre a mensagem e total zero.
 4. Crie `abrirCarrinho()` e `fecharCarrinho()`, adicionando/removendo `cart--active` no painel e `cart-backdrop--active` no fundo. Atualize `aria-hidden` do painel e `aria-expanded` do botão com `setAttribute`.
 5. Conecte o botão `.cart-trigger` à abertura e `.cart__close` e `.cart-backdrop` ao fechamento.
-
 **Teste independente:** no console, use `carrinho = [{ id: "1", quantidade: 2 }]` e chame `renderizarCarrinho()`. Isso não deve ficar no arquivo. Duas unidades de R$ 39,90 devem totalizar R$ 79,80.
+
 
 ### Integração
 
