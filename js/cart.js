@@ -1,16 +1,15 @@
 // Sprint 2 — Pessoa 2: renderize, abra e feche o carrinho.
-// Sprint 3 — Pessoa 1: conecte a remoção de cada item.
 
 function renderizarCarrinho() {
     const containerProdutos = document.querySelector('.cart__products');
     const elementoTotal = document.querySelector('.total');
-    
-    
+
+
     containerProdutos.innerHTML = '';
 
     let total = 0;
 
-    
+
     if (!carrinho || carrinho.length === 0) {
         containerProdutos.innerHTML = '<p class="cart__empty">Seu carrinho está vazio.</p>';
         if (elementoTotal) {
@@ -19,16 +18,16 @@ function renderizarCarrinho() {
         return;
     }
 
-    
+
     carrinho.forEach(item => {
-        
+
         const livro = dados.livros.find(l => l.id === item.id);
         if (!livro) return;
 
         const valorLinha = livro.preco * item.quantidade;
         total += valorLinha;
 
-        
+
         const divProduto = document.createElement('div');
         divProduto.className = 'cart__product';
 
@@ -40,12 +39,24 @@ function renderizarCarrinho() {
                 <p>Quantidade: ${item.quantidade}</p>
                 <strong>${formatarPreco(valorLinha)}</strong>
             </div>
+
+            <button class="cart__remove">Remover</button>
         `;
+
+        // Sprint 3 — Pessoa 1: conecte a remoção de cada item.
+        const botaoRemover = divProduto.querySelector('.cart__remove');
+
+        botaoRemover.addEventListener('click', () => {
+            carrinho = carrinho.filter(itemCarrinho => itemCarrinho.id !== item.id);
+
+            salvarCarrinho();
+            renderizarCarrinho();
+        });
 
         containerProdutos.appendChild(divProduto);
     });
 
-   
+
     if (elementoTotal) {
         elementoTotal.textContent = formatarPreco(total);
     }
@@ -100,4 +111,3 @@ document.addEventListener('DOMContentLoaded', () => {
         cartBackdrop.addEventListener('click', fecharCarrinho);
     }
 });
-
