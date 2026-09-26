@@ -91,7 +91,6 @@ Abram dois livros pelo catálogo, comparem os dados e testem o retorno. Confiram
 5. Conecte o botão `.cart-trigger` à abertura e `.cart__close` e `.cart-backdrop` ao fechamento.
 **Teste independente:** no console, use `carrinho = [{ id: "1", quantidade: 2 }]` e chame `renderizarCarrinho()`. Isso não deve ficar no arquivo. Duas unidades de R$ 39,90 devem totalizar R$ 79,80.
 
-
 ### Integração
 
 - A Pessoa 1 acrescenta `renderizarCarrinho()` e `abrirCarrinho()` depois de salvar no evento de adicionar.
