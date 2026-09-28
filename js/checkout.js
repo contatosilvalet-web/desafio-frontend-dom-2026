@@ -16,7 +16,7 @@ function finalizarCompra() {
     // 4. Atribui um array vazio ao carrinho, salva, renderiza novamente e fecha o painel
     carrinho = [];
     
-    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    localStorage.removeItem("pagina-42-carrinho"); location.reload();
 
     renderizarCarrinho();
     fecharCarrinho();

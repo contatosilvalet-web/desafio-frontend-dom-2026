@@ -25,3 +25,6 @@ function formatarPreco(valorEmCentavos) {
   }
   return "R$ " + reais + "," + textoCentavos;
 }
+
+
+
