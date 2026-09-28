@@ -35,7 +35,6 @@ if (!livroSelecionado) {
   </div>
 </div>
     `;
-}
 
 // Sprint 2 — Pessoa 1: conecte o botão de adicionar.
 
@@ -54,9 +53,11 @@ btnAdicionar.addEventListener("click", () => {
   }
 
   salvarCarrinho();
-
   renderizarCarrinho();
   abrirCarrinho();
 
-  console.log("Carrinho:", carrinho);
-});
+    console.log("Carrinho:", carrinho);
+  });
+}
+
+renderizarCarrinho();
